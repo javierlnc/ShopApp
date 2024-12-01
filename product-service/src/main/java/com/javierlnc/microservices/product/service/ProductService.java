@@ -18,7 +18,7 @@ public class ProductService {
     public ProductResponseDTO createProduct(ProductRequestDTO productRequest){
         Product product = new Product();
         product.setName(productRequest.getName());
-        product.setDescription(product.getDescription());
+        product.setDescription(productRequest.getDescription());
         product.setPrice(productRequest.getPrice());
         productRepository.save(product);
         return convertProductToDTO(product);
