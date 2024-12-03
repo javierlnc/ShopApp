@@ -1,6 +1,7 @@
 package com.javierlnc.microservices.order_service.controller;
 
 import com.javierlnc.microservices.order_service.dto.OrderRequest;
+import com.javierlnc.microservices.order_service.model.Order;
 import com.javierlnc.microservices.order_service.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,7 @@ public class OrderController {
     @ResponseStatus(HttpStatus.CREATED)
     public String placeOrder(@RequestBody OrderRequest orderRequest){
         orderService.placeOrder(orderRequest);
+        
         return  "Order Placed Successfully";
     }
 }

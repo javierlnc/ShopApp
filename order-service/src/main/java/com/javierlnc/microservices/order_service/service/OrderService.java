@@ -12,6 +12,10 @@ public class OrderService {
     private final OrderRepository orderRepository;
     public  void placeOrder(OrderRequest orderRequest){
         Order order = new Order();
-         orderRepository.save(order);
+        order.setOrderNumber(orderRequest.getOrderNumber());
+        order.setSkuCode(orderRequest.getSkuCode());
+        order.setQuantity(orderRequest.getQuantity());
+        order.setPrice(orderRequest.getPrice());
+        orderRepository.save(order);
     }
 }
