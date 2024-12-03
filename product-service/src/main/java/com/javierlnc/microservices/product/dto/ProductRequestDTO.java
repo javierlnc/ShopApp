@@ -1,6 +1,5 @@
 package com.javierlnc.microservices.product.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.math.BigDecimal;

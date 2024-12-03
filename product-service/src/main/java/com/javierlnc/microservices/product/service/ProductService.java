@@ -5,7 +5,6 @@ import com.javierlnc.microservices.product.dto.ProductResponseDTO;
 import com.javierlnc.microservices.product.model.Product;
 import com.javierlnc.microservices.product.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,7 +14,7 @@ import java.util.List;
 public class ProductService {
     private final ProductRepository productRepository;
 
-    public ProductResponseDTO createProduct(ProductRequestDTO productRequest){
+    public ProductResponseDTO createProduct(ProductRequestDTO productRequest) {
         Product product = new Product();
         product.setName(productRequest.getName());
         product.setDescription(productRequest.getDescription());
@@ -25,18 +24,18 @@ public class ProductService {
     }
 
     public List<ProductResponseDTO> getAllProducts() {
-        return  productRepository.findAll()
+        return productRepository.findAll()
                 .stream()
-                .map(this :: convertProductToDTO)
+                .map(this::convertProductToDTO)
                 .toList();
     }
 
-    private ProductResponseDTO convertProductToDTO(Product product){
+    private ProductResponseDTO convertProductToDTO(Product product) {
         ProductResponseDTO dto = new ProductResponseDTO();
         dto.setId(product.getId());
         dto.setName(product.getName());
         dto.setDescription(product.getDescription());
         dto.setPrice(product.getPrice());
-        return  dto;
+        return dto;
     }
 }
