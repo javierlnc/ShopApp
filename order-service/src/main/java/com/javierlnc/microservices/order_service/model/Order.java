@@ -1,15 +1,17 @@
-package com.javierlnc.microservices.order_service.module;
+package com.javierlnc.microservices.order_service.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
 @Entity
-@Table(name="t_order")
+@Table(name = "t_orders")
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class Order {
@@ -19,5 +21,5 @@ public class Order {
     private String orderNumber;
     private String skuCode;
     private BigDecimal price;
-    private  Integer quantity;
+    private Integer quantity;
 }
