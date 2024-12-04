@@ -16,15 +16,15 @@ public class InventoryController {
 
     private final InventoryService inventoryService;
 
-    @PostMapping("/url")
-    public ResponseEntity<?> createInventory(@RequestBody InventoryRequestDTO dto) {
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<?> get() {
         try {
-            // TODO Implement Your Logic To Save Data And Return Result Through
-            // ResponseEntity
-            return new ResponseEntity<>("Create Result", HttpStatus.OK);
+            // TODO Implement Your Logic To Get Data From Service Layer Or Directly From
+            // Repository Layer
+            return new ResponseEntity<>("GetAll Results", HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
 }
