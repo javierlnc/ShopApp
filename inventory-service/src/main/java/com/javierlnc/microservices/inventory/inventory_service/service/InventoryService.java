@@ -13,7 +13,7 @@ public class InventoryService {
     private final InventoryRepository inventoryRepository;
 
     public boolean isInStock(InventoryRequestDTO dto) {
-        return inventoryRepository.existsBySkuCodeAndQuantityIsGreaterThanEquals(dto.getSkuCode(), dto.getQuantity());
+        return inventoryRepository.existsBySkuCodeAndQuantityIsGreaterThanEqual(dto.getSkuCode(), dto.getQuantity());
 
     }
 

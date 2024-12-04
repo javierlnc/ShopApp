@@ -6,6 +6,6 @@ import com.javierlnc.microservices.inventory.inventory_service.module.Inventory;
 
 public interface InventoryRepository extends JpaRepository<Inventory, Long> {
 
-    boolean existsBySkuCodeAndQuantityIsGreaterThanEquals(String skuCode, Integer quantity);
+    boolean existsBySkuCodeAndQuantityIsGreaterThanEqual(String skuCode, Integer quantity);
 
 }
